@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard (Semantic)</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Dashboard Overview</h1>
+        <nav aria-label="Primary">
+            <a href="#">Home</a>
+            <a href="#">Reports</a>
+            <a href="#">Settings</a>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Welcome Back, User!</h2>
+            <p>Here's a quick summary of your data. (Semantic markup)</p>
+        </section>
+        <section class="data-grid" aria-label="Key metrics">
+            <article>
+                <h3>Total Users</h3>
+                <p id="metric-users" data-metric="total_users">0</p>
+            </article>
+            <article>
+                <h3>Active Sessions</h3>
+                <p id="metric-sessions" data-metric="active_sessions">0</p>
+            </article>
+            <article>
+                <h3>Revenue YTD</h3>
+                <p id="metric-revenue" data-metric="revenue_ytd">$0</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 My Company</p>
+    </footer>
+    <script src="js/metrics.js"></script>
+</body>
+</html>
