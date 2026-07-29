@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Metrics — Fixed Layout</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/layout-fixed.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>System Metrics Dashboard</h1>
+        <nav aria-label="Primary">
+            <a href="index_fixed_layout.html" aria-current="page">Fixed Layout</a>
+            <a href="index_broken_layout.html">Broken Layout</a>
+        </nav>
+        <p class="layout-badge layout-badge--ok" id="layout-status">Layout: FIXED (flex + grid)</p>
+    </header>
+    <main class="dashboard">
+        <section class="welcome">
+            <h2>Live Host Metrics</h2>
+            <p>Responsive Flexbox header and CSS Grid metric cards — the layout that ships.</p>
+        </section>
+        <section class="metrics-grid" aria-label="System metrics" data-layout="fixed">
+            <article class="metric-card">
+                <h3>CPU Usage</h3>
+                <p id="metric-cpu" data-metric="cpu_percent">0%</p>
+            </article>
+            <article class="metric-card">
+                <h3>Memory Usage</h3>
+                <p id="metric-memory" data-metric="memory_percent">0%</p>
+            </article>
+            <article class="metric-card">
+                <h3>Disk Usage</h3>
+                <p id="metric-disk" data-metric="disk_percent">0%</p>
+            </article>
+            <article class="metric-card">
+                <h3>Network</h3>
+                <p id="metric-network" data-metric="network_mbps">0 Mbps</p>
+            </article>
+        </section>
+        <p id="status-line">Waiting for metrics…</p>
+    </main>
+    <footer class="app-footer">
+        <p>&copy; 2026 System Metrics Lab — Day 2 CSS Layout</p>
+    </footer>
+    <script src="js/metrics.js"></script>
+    <script src="js/layout-demo.js"></script>
+</body>
+</html>

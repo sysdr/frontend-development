@@ -1,0 +1,25 @@
+/* Intentionally broken: floats without clearfix, fixed widths that overflow */
+.app-header { /* no flex — nav and badge stack poorly on narrow viewports */ }
+
+.metrics-grid {
+  /* float-based "grid" that fails to wrap cleanly */
+  width: 100%;
+}
+
+.metric-card {
+  float: left;
+  width: 280px;
+  margin: 8px;
+  /* no clearfix → footer and status collide with cards */
+}
+
+/* Simulate overflow / collision failure */
+.metric-card:nth-child(3) {
+  margin-left: -40px;
+  transform: rotate(-2deg);
+  opacity: 0.92;
+}
+.metric-card:nth-child(4) {
+  clear: none;
+  width: 320px;
+}

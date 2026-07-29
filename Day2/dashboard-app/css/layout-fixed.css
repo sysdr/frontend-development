@@ -1,0 +1,37 @@
+/* Correct layout: Flexbox header + CSS Grid metrics */
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+}
+
+.app-header h1 { flex: 1 1 auto; }
+.app-header nav { flex: 1 1 auto; }
+.app-header .layout-badge { flex: 0 0 auto; margin-top: 0; }
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--gap);
+  clear: both;
+}
+
+.metric-card {
+  float: none;
+  width: auto;
+  margin: 0;
+  transform: none;
+  opacity: 1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 560px) {
+  .app-header { flex-direction: column; align-items: flex-start; }
+  .dashboard { padding: 1.25rem; }
+}

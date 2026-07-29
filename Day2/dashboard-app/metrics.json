@@ -1,0 +1,8 @@
+{
+  "cpu_percent": 0,
+  "memory_percent": 0,
+  "disk_percent": 0,
+  "network_mbps": 0,
+  "demo_runs": 0,
+  "updated_at": null
+}
