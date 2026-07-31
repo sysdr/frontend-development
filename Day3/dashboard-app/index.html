@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Metrics — Network Waterfall</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/waterfall.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-top">
+            <button type="button" id="btn-refresh" class="btn-refresh">Refresh Now</button>
+            <h1>System Metrics Dashboard</h1>
+        </div>
+        <nav aria-label="Primary">
+            <a href="index_parallel.html" aria-current="page">Parallel Fetch</a>
+            <a href="index_sequential.html">Sequential Fetch</a>
+        </nav>
+        <p class="layout-badge layout-badge--ok" id="fetch-mode">Fetch mode: PARALLEL (Promise.all)</p>
+    </header>
+    <main class="dashboard">
+        <section class="welcome">
+            <h2>Live Host Metrics</h2>
+            <p>All metric endpoints fire together — the waterfall bars overlap and total wait time drops.</p>
+        </section>
+        <section class="metrics-grid" aria-label="System metrics" data-fetch-mode="parallel">
+            <article class="metric-card">
+                <h3>CPU Usage</h3>
+                <p id="metric-cpu" data-metric="cpu_percent">0%</p>
+            </article>
+            <article class="metric-card">
+                <h3>Memory Usage</h3>
+                <p id="metric-memory" data-metric="memory_percent">0%</p>
+            </article>
+            <article class="metric-card">
+                <h3>Disk Usage</h3>
+                <p id="metric-disk" data-metric="disk_percent">0%</p>
+            </article>
+            <article class="metric-card">
+                <h3>Network</h3>
+                <p id="metric-network" data-metric="network_mbps">0 Mbps</p>
+            </article>
+        </section>
+        <section class="waterfall-panel" aria-label="Network waterfall">
+            <h2>Network Waterfall</h2>
+            <p class="muted">Bars show request start → end for each metric endpoint.</p>
+            <div id="waterfall" class="waterfall" role="img" aria-label="Request timing bars"></div>
+            <p id="waterfall-summary">No fetches yet.</p>
+        </section>
+        <p id="status-line">Waiting for metrics…</p>
+    </main>
+    <footer class="app-footer">
+        <p>&copy; 2026 System Metrics Lab — Day 3 Parallel Fetch Demo</p>
+    </footer>
+    <script src="js/waterfall.js"></script>
+    <script src="js/metrics.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+</html>
